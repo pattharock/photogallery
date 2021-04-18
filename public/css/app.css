@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+body{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+.header {
+  padding: 60px;
+  margin: 0;
+  text-align: center;
+  background: orange;
+  color: white;
+  font-size: 30px;
+  /* width: 100vw; */
+}
+
+.marginBottom{
+  margin-bottom: 5.5rem;
+}
+
+#navbar {
+  list-style-type: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #EEEEEE;
+}
+
+ul#navbar li {
+  float:left;
+}
+
+ul#navbar li a {
+  display: block;
+  color: #000000;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+}
+
+ul#navbar li a:hover {
+  background-color: orange;
+  color: white;
+  font-size: larger;
+  font-weight: 300;
+  transition: all 0.2s ease-in;
+}
+
+#appName{
+  font-weight: bold;
+}
+
+#navbar input{
+  float:left;
+  display: block;
+  float: right;
+  color: #000000;
+  /* padding: 0.2rem; */
+  margin-right: 1rem;
+  /* padding: 8px 16px; */
+  text-decoration: none;
+  /* transition: all 0.2s ease-out; */
+  width: 25%;
+}
+/* main page styling */
+.main{
+  margin-top: 2.5rem;
+  width: 100vw;
+}
+
+/* card element styling */
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  /* background-color: aqua; */
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.card img{
+  display: block;
+  margin: 1rem auto;
+  max-width: 50%;
+  height: auto;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 1rem;
+  background-color: #e9e9e9;
+}
+
+#nameSearch{
+  width: 30%;
+}
+
+.header form input{
+  width: 30%;
+}
+
+/* .container h5{
+  font-size: 1.5rem;
+  text-transform: capitalize;
+} */
+
+.container h5 b {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+
+.tag{
+  background-color: orange;
+  color: white;
+  margin-right: 0.2rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  transition: all 0.2s ease-out;
+}
+
+.tag:hover{
+  font-size: large;
+  transition: all 0.2s ease-in;
+}
+
+/* form styling */
+.formContainer{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input[type=text], [type=password], [type=email], select, textarea {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button[type=submit] {
+  background-color: orange;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+}
+
+button[type=submit]:hover {
+  background-color: rgb(201, 142, 34);
+}
+
+input[type=submit]{
+  background-color: orange;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+}
+
+input[type=submit]:hover{
+  background-color: rgb(201, 142, 34);
+}
+
+#hashtagLabeller{
+  font-size: smaller;
+}
+
+/* styling the dynamically added tags on form */
+
+.tag-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.tagonform{
+  pointer-events: none;
+  background-color: orange;
+  color: white;
+  padding: 6px;
+  margin: 5px;
+}
+
+.tagonform::before {
+  pointer-events: all;
+  display: inline-block;
+  content: 'x';  
+  height: 20px;
+  width: 20px;
+  margin-right: 6px;
+  text-align: center;
+  color: red;
+  background-color: rgb(255, 176, 29);
+  cursor: pointer;
+}
+
+/* Responsive styling of form */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+/* Registration page styling */
+
+.form-register{
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+#registerMsg{
+  font-weight: lighter;
+  color: rgb(228, 67, 67);
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+#loginMsg{
+  font-weight: lighter;
+  color: rgb(228, 67, 67);
+  margin: 0.5rem 0rem;
+  /* padding: 0.5rem; */
+}
+
+/* Footer Styling */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  min-height: 5rem;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  /* margin-top: 4rem; */
+}

@@ -1,0 +1,23 @@
+{
+  "name": "webtask",
+  "version": "1.0.0",
+  "description": "ExpressJS implementation of the PhotoGallery Web Task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ritvik Singh",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap-icons": "^1.4.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.12.4",
+    "multer": "^1.4.2",
+    "pug": "^3.0.2",
+    "uuid": "^8.3.2"
+  }
+}

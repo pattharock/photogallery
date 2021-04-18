@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <base href="/">
+    <link rel='stylesheet' type='text/css' href='css/app.css'>
+    <title>Photo Gallery</title>
+  </head>
+  <body>
+    <ul id="navbar">
+      <li>
+        <a href="/">PhotoGallery</a>
+      </li>
+      <% if(user && user.loggedin) {%>
+        <li>
+          <a href="/">View All Photos</a>
+        </li>
+        <li>
+          <a href="/addPhoto">Add a Photo</a>
+        </li>
+        <li>
+          <a href="/login?action=logout" id="logout">Logout</a>
+        </li>
+      <% } else {%>
+        <li>
+          <a href="/register">Register</a>
+        </li>
+        <li>
+          <a href="/login">Login</a>
+        </li>
+        <% }%>
+    </ul>
+
+    <div class="header">
+      <h1>Photo Gallery</h1>
+      <% if(!loginToCont) { %>
+        <input type="text" placeholder="Search by Title" name="nameSearch" id="nameSearch">
+        <form action="/tagsSearch" method="POST">
+          <input type="text" placeholder="Search by Tags" name="tagSearch" id="tagSearch">  
+        </form>
+      <% } %>
+      <p>View all the uploded photos on this page</p>
+      <% if(loginToCont) { %>
+      <p><a href="/login">Login</a> or <a href="/register">Register</a> to continue</p>
+      <% } %>
+    </div>
+    <div class="marginBottom">
+      <% if(!loginToCont) { %>
+        <% items.forEach(function(image) { %>
+          <div class="card">
+            <img src="data:image/<%=image.img.contentType%>;base64,
+              <%=image.img.data.toString('base64')%>">
+            <div class="container">
+              <h5><b><%= image.name %></b></h5>
+              <p>
+                <% image.desc.forEach(function(tag) { %>
+                  <span class="tag"><%=tag%></span>
+                <% }) %>
+              </p>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+    <div class="footer">
+      <p>Copyright @ RitvikSingh - All rights reserved</p>
+    </div>
+    <script src="js/homePage.js"></script>
+  </body>
+</html>

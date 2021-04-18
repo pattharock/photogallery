@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <base href="/">
+    <link rel='stylesheet' type='text/css' href='css/app.css'>
+    <script src="js/app.js"></script>
+    <title>Photo Gallery</title>
+  </head>
+  <body>
+    <ul id="navbar">
+      <li>
+        <a href="/">PhotoGallery<i class="bi bi-x"></i></a>
+      </li>
+      <% if(user && user.loggedin) {%>
+        <li>
+          <a href="/">View All Photos</a>
+        </li>
+        <li>
+          <a href="/addPhoto">Add a Photo</a>
+        </li>
+        <li>
+          <a href="/login?action=logout" id="logout">Logout</a>
+        </li>
+      <% } else {%>
+        <li>
+          <a href="/register">Register</a>
+        </li>
+        <li>
+          <a href="/login">Login</a>
+        </li>
+        <% }%>
+    </ul>
+    <div class="main"> 
+      <div class="header">
+        <h1>Photo Upload</h1>
+        <p>Add a photo to your gallery via the form below</p>
+      </div>
+      <div class="formContainer">
+        <form action="/addPhoto" method="POST" enctype='multipart/form-data' onkeydown="return event.key != 'Enter';">
+          <div class="row">
+            <div class="col-25">
+              <label for="imageTitle">Image Title</label>
+            </div>
+            <div class="col-75">
+              <input id="imageTitle" type='text' placeholder='Image Title' value='' name='imageTitle' required=''>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="tags">Image Tags</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="desc" name='tags' placeholder='Add all tags'>
+              <p id="tagLabeller"><i>Click on a tag to remove it</i></p>
+              <div class="tag-container"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              
+            </div>
+            <div class="col-75">
+              <label for='imageFile' class="fileButtonOverlay">
+                Upload Image
+              </label>
+              <input id="#image" type='file' name='imageFile' value='' required=''>
+            </div>
+          </div>
+          <div class="row">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Copyright @ RitvikSingh - All rights reserved</p>
+    </div>
+    <script src="js/addPhoto.js"></script>
+  </body>
+</html>
